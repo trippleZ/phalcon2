@@ -1,0 +1,10 @@
+{% for post in showAll %}
+    <div class="post">
+        <h2> {{ post.title }}<br></h2><p> {{ post.content }} <br></p>
+            <p class="right">Created {{ post.created_at }}</p>
+            {{ link_to('post/deletetopic/' ~ post.id, 'Delete topic') }} |
+            {{ link_to('post/updatetopic/' ~ post.id, 'Update topic') }}
+    </div>
+    {% else %}
+    <p>There are no topics!</p>
+{% endfor %}
